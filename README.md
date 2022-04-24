@@ -1,0 +1,1 @@
+#Prosty program zliczający liczbę słów i znaków w podanym tekście.
