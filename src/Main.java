@@ -9,7 +9,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         input = scanner.nextLine();
 
-        System.out.println(countWordsUsingSplit(input));
+        System.out.println("words: " + countWordsUsingSplit(input));
+        System.out.println("characters: " + countCharacters(input));
     }
     public static int countWordsUsingSplit(String input) {
         if (input == null || input.isEmpty()) {
@@ -17,6 +18,9 @@ public class Main {
         }
         String[] words = input.split("\\s+");
         return words.length;
+    }
+    public static int countCharacters(String input){
+        return input.length();
     }
 
 }
