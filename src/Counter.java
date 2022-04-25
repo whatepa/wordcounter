@@ -1,17 +1,19 @@
 public class Counter {
-    private final String input;
-    private char sampleChar;
+    protected String input;
+    protected char sampleChar;
+    protected Counter(){
+    }
 
-    public Counter(String input) {
+    protected Counter(String input) {
         this.input = input;
     }
 
-    public Counter(String input, char sampleChar) {
+    protected Counter(String input, char sampleChar) {
         this.input = input;
         this.sampleChar = sampleChar;
     }
 
-    protected int countWordsUsingSplit() {
+    protected int countWords() {
         if (input == null || input.isEmpty()) {
             return 0;
         }
