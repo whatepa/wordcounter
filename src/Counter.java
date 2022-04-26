@@ -1,7 +1,10 @@
+import java.util.Map;
+
 public class Counter {
     protected String input;
     protected char sampleChar;
-    protected Counter(){
+
+    protected Counter() {
     }
 
     protected Counter(String input) {
@@ -40,5 +43,25 @@ public class Counter {
             }
         }
         return totalChars;
+    }
+
+    protected char mostFrequentChar() {
+        int[] count = new int[127];
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) > 65 && input.charAt(i) < 122) {
+                count[input.charAt(i)]++;
+            }
+        }
+        int max = -1;
+        char result = ' ';
+
+        for (int j = 0; j < input.length(); j++) {
+                if (max < count[input.charAt(j)]) {
+                    max = count[input.charAt(j)];
+                    result = input.charAt(j);
+                }
+
+        }
+        return result;
     }
 }
