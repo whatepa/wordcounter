@@ -1,4 +1,3 @@
-import java.util.Map;
 
 public class Counter {
     protected String input;
@@ -32,6 +31,16 @@ public class Counter {
         return input.replace(" ", "").length();
     }
 
+    protected int countLetters() {
+        int result = 0;
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) > 65 && input.charAt(i) < 122) {
+                result++;
+            }
+        }
+        return result;
+    }
+
     protected int countGivenCharacter() {
         int totalChars = 0;
         char tmp;
@@ -56,10 +65,10 @@ public class Counter {
         char result = ' ';
 
         for (int j = 0; j < input.length(); j++) {
-                if (max < count[input.charAt(j)]) {
-                    max = count[input.charAt(j)];
-                    result = input.charAt(j);
-                }
+            if (max < count[input.charAt(j)]) {
+                max = count[input.charAt(j)];
+                result = input.charAt(j);
+            }
 
         }
         return result;

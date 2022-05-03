@@ -38,9 +38,21 @@ public class CounterFromFile extends Counter {
         return dataFromFile.length();
     }
 
+
     @Override
     protected int countCharactersWithoutSpaces() {
         return dataFromFile.replace(" ", "").length();
+    }
+
+    @Override
+    protected int countLetters() {
+        int result = 0;
+        for (int i = 0; i < dataFromFile.length(); i++) {
+            if (dataFromFile.charAt(i) > 65 && dataFromFile.charAt(i) < 122) {
+                result++;
+            }
+        }
+        return result;
     }
 
     @Override
@@ -72,7 +84,6 @@ public class CounterFromFile extends Counter {
                 max = count[dataFromFile.charAt(j)];
                 result = dataFromFile.charAt(j);
             }
-
         }
         return result;
     }
